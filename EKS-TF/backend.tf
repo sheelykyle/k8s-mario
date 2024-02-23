@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = aws_s3_bucket.mario-s3-bucket.id
+    bucket = "$(terraform output -raw bucket_name)"
     key    = "EKS/terraform.tfstate"
     region = "us-east-1"
   }
