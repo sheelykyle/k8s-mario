@@ -100,15 +100,3 @@ resource "aws_eks_node_group" "example" {
     aws_iam_role_policy_attachment.example-AmazonEC2ContainerRegistryReadOnly,
   ]
 }
-
-resource "aws_s3_bucket" "mario-S3-bucket" {   
-  bucket = "mario-s3-bucket-$[random_id.s3_tail.hex}"
-
-  tags = {     
-    Name = "mario s3 bucket"     
-  } 
-}
-
-resource "random_id" "s3_tail" {
-  byte_length = 16
-}
